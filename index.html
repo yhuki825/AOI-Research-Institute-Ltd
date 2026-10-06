@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!--
+================================================================
+有限会社 葵綜合研究所 ブランドサイト デザイン案（9/26ハウススタイル版）
+  コンセプト：「仰日（あふひ）── 光のほうへ向く」
+    社名の「葵」は、古くは「あふひ」と書き、日を仰ぐ（葉が日のほうへ向く）草とする説がある。
+    広告と販売促進の仕事を、商品やサービスの“選ばれる理由”に光を当て、
+    お客さまの目がそちらへ向くようにする仕事として表現。「綜合研究所」は、観て・考えて・試して・確かめる進め方に。
+    ・ヒーロー：ばらばらの向きの葉が、光（ポインターで動く朝日）のほうへ少しずつ向きをそろえるCanvas
+    ・右端のスクロールレール：揺れていた葉が、読み進めるほど上の日のほうへまっすぐ向く。終わりで日がともる
+    ・図：三つの事業を、ひとつの葉に当てる三方向の光として描くSVG
+    ※所在地・地名など土地から着想した要素、代表者名からの着想は採用していません。
+  書体：Shippori Mincho B1 ＋ Zen Kaku Gothic New ＋ Cormorant Garamond
+  配色：茄子紺 #1A1320 ／ 葵の淡紅 #D99BBE ／ 朝日の金 #E9C98A
+  デプロイ：Cloudflare Pages（Direct Upload）にこのファイルをそのままアップロード。
+            ビルド不要。外部依存は Google Fonts と Unsplash 画像のみ。
+
+  ■ 公開前の確認事項（チェックリスト）
+  【確認事項】社名の由来は未確認です。「葵＝あふひ＝日を仰ぐ」は語源の一説で、本文でも「一説には」と書いています。採用の可否をご確認ください。
+  【確認事項】英字表記「AOI Research Institute」・ロゴ（葉と日の仮マーク）は仮です。
+  【確認事項】キャッチコピー「よい理由に、光を当てる。」と各見出しは制作側の案です。
+  【確認事項】「観る・考える・試す・確かめる」は社名の「研究所」から着想した進め方の案です。実際の進め方をご確認ください。
+  【確認事項】各事業の説明・項目はCSV（広告業、販売促進業／企業向け広告企画及び販売促進支援／集客・販売促進支援）を膨らませた案です。CSVの事業内容は同じ文が二重に入っていたため、重複を除いて1回分を記載しています。
+  【確認事項】実績・取引先・数値はCSVに無いため掲載していません。景品表示法上、効果を断定する表現は避けています。
+  【確認事項】代表者の役職名は「取締役」と仮置きしています（有限会社。代表取締役を置いている場合は変更）。
+  【確認事項】設立年月日・資本金・従業員数はCSVに無いため会社概要ではコメントアウトしています。
+  【確認事項】代表メッセージは草案です。ご本人の確認・修正を経て公開してください。署名欄の氏名は会社概要に記載のため省略しています。
+  【確認事項】画像はUnsplashの仮素材（差し替え推奨）：1743385779347-1549dabf1320 / 1507925921958-8a62f3d1a50d / 1557804506-669a67965ba0 / 1470252649378-9c29740c9fa8
+  【確認事項】OGP画像・favicon（仮の葉と日）・公開URL
+  ※ご依頼に合わせ、連絡用のフォーム・エリア、代表者写真は設けていません。
+================================================================
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>有限会社葵綜合研究所｜広告企画・販売促進支援</title>
+<meta name="description" content="有限会社 葵綜合研究所は、企業向けの広告企画及び販売促進支援サービスを提供し、広告活動を通じて企業の集客・販売促進を支援する会社です。">
+<meta property="og:title" content="有限会社 葵綜合研究所｜よい理由に、光を当てる。">
+<meta property="og:description" content="企業向けの広告企画と販売促進支援。広告活動を通じた集客・販売促進支援。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<!-- 【確認事項】og:url / og:image は公開ドメイン確定後に設定 -->
+<meta name="theme-color" content="#1A1320">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1320'/%3E%3Cpath d='M16 26C9 20 6 15 9 11c2-3 6-2 7 1 1-3 5-4 7-1 3 4 0 9-7 15z' fill='none' stroke='%23D99BBE' stroke-width='1.6'/%3E%3Ccircle cx='24' cy='7' r='2.4' fill='%23E9C98A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Shippori+Mincho+B1:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  /* 夜明け前の茄子紺と、葵の花の淡紅、朝日の金 */
+  --nasu:#1A1320;         /* 基調：茄子紺 */
+  --nasu-2:#241A2C;       /* 一段明るい紫 */
+  --nasu-deep:#120D17;    /* フッター */
+  --aoi:#D99BBE;          /* 差し色：葵の花 */
+  --asahi:#E9C98A;        /* 第二色：朝日 */
+  --leaf:#93B08E;         /* 葉 */
+  --base:var(--nasu);--base2:var(--nasu-2);--deep:var(--nasu-deep);
+  --base-rgb:26,19,32;
+  --text:#F1EBEF;--mute:#9D91A2;--soft:rgba(241,235,239,.8);
+  --accent:var(--aoi);--accent-rgb:217,155,190;
+  --line:rgba(241,235,239,.13);--line-strong:rgba(241,235,239,.3);
+  --paper:#F3EDEE;--ink:#22182A;--ink-rgb:34,24,42;--ink-mute:#6C5F72;--accent-ink:#9A4F79;
+  --fallback:radial-gradient(circle at 80% 15%,rgba(233,201,138,.35),transparent 40%),radial-gradient(circle,rgba(217,155,190,.25) 1.5px,transparent 2px) 0 0/26px 26px,linear-gradient(160deg,#241A2C,#120D17);
+  --serif:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  --latin:"Cormorant Garamond","Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --num:var(--latin);
+  --header-h:72px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--base);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.9;letter-spacing:.04em;word-break:auto-phrase;text-wrap:pretty;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,p,li,dd,dt{word-break:auto-phrase}
+.nw{display:inline-block}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip{position:fixed;left:12px;top:-60px;z-index:200;background:var(--accent);color:var(--base);padding:10px 16px;text-decoration:none;font-weight:700;transition:top .2s}
+.skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:min(1160px,100% - 48px);margin:0 auto}
+.sec{padding:clamp(96px,14vw,180px) 0;position:relative}
+.alt{background:var(--base2);--sec-bg:var(--base2)}
+.deep{background:var(--deep);--sec-bg:var(--deep)}
+.paper{background:var(--paper);color:var(--ink);--line:rgba(var(--ink-rgb),.16);--line-strong:rgba(var(--ink-rgb),.5);--mute:var(--ink-mute);--soft:rgba(var(--ink-rgb),.8);--sec-bg:var(--paper);--accent:var(--accent-ink)}
+.lead{max-width:34em;margin:0 0 1.4em}
+p{margin:0 0 1.3em}
+
+/* header */
+.header{position:fixed;inset:0 0 auto 0;z-index:100;padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid transparent;transition:background .4s,border-color .4s,backdrop-filter .4s}
+.header.is-scrolled{background:rgba(var(--base-rgb),.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:var(--line)}
+.header-in{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 clamp(20px,4vw,56px);max-width:1440px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.logo svg{flex:none}
+.gnav ul{list-style:none;margin:0;padding:0;display:flex;gap:clamp(16px,2.2vw,34px)}
+.gnav a{position:relative;display:block;padding:6px 0;text-decoration:none;font-size:13px;letter-spacing:.12em}
+.menu-btn{display:none;background:none;border:0;color:var(--text);width:44px;height:44px;cursor:pointer;position:relative;flex:none}
+@media (max-width:900px){
+ :root{--header-h:64px}
+ .menu-btn{display:block;z-index:120}
+ .gnav{position:fixed;inset:0;background:rgba(var(--base-rgb),.97);display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;padding:env(safe-area-inset-top,0px) 24px env(safe-area-inset-bottom,0px)}
+ .gnav.is-open{opacity:1;visibility:visible}
+ .gnav ul{flex-direction:column;align-items:center;gap:26px}
+ .gnav a{font-family:var(--serif);font-size:20px;letter-spacing:.14em}
+}
+
+/* hero shared */
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.js .hero [data-in]{opacity:0;transform:translateY(14px);transition:opacity 1.2s cubic-bezier(.22,.7,.2,1),transform 1.2s cubic-bezier(.22,.7,.2,1)}
+.js .hero .v[data-in]{transform:translateY(-14px)}
+.js .is-loaded .hero [data-in]{opacity:1;transform:none}
+.is-loaded .hero [data-in="2"]{transition-delay:.4s}
+.is-loaded .hero [data-in="3"]{transition-delay:.85s}
+.is-loaded .hero [data-in="4"]{transition-delay:1.25s}
+.scroll-cue{position:absolute;z-index:2;display:flex;align-items:center;gap:12px;font-family:var(--latin);font-size:12px;letter-spacing:.24em;color:var(--mute);text-decoration:none;text-transform:uppercase}
+.scroll-cue i{display:block;width:1px;height:44px;background:linear-gradient(var(--mute),transparent);animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity 1s cubic-bezier(.22,.7,.2,1),transform 1s cubic-bezier(.22,.7,.2,1)}
+.js .reveal.is-in{opacity:1;transform:none}
+.js .reveal--fade{transform:none}
+
+/* photos */
+.ph{position:relative;overflow:hidden;margin:0;background:linear-gradient(135deg,var(--base2),var(--deep))}
+.ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.78) contrast(1.03)}
+.ph.is-fallback{background:var(--fallback)}
+
+/* concept */
+.concept-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(40px,7vw,110px);align-items:center}
+.concept-text p{max-width:30em}
+.fig{margin:0}
+.fig svg{display:block;width:100%;height:auto;max-width:520px;margin:0 auto;overflow:visible}
+.fig figcaption{margin-top:16px;text-align:center;font-size:13px;color:var(--mute);letter-spacing:.08em}
+.fig .ln{fill:none;stroke:var(--accent);stroke-width:1.3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s cubic-bezier(.45,.05,.2,1) .3s}
+.fig .ln.d2{transition-delay:.9s}.fig .ln.d3{transition-delay:1.5s}.fig .ln.d4{transition-delay:2.1s}
+.fig .soft{fill:none;stroke:var(--line-strong);stroke-width:1}
+.fig .dot{fill:var(--accent);opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.3);transition:opacity .8s 1.2s,transform .8s cubic-bezier(.3,1.6,.5,1) 1.2s}
+.fig .lbl{fill:currentColor;font-family:var(--serif);font-size:17px;letter-spacing:.16em;opacity:0;transition:opacity 1s 1.8s}
+.fig .lbl-s{fill:var(--mute);font-family:var(--sans);font-size:11px;letter-spacing:.14em;opacity:0;transition:opacity 1s 2s}
+.fig.is-in .ln{stroke-dashoffset:0}
+.fig.is-in .dot{opacity:1;transform:none}
+.fig.is-in .lbl,.fig.is-in .lbl-s{opacity:1}
+@media (max-width:900px){.concept-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* band */
+.band{position:relative;height:clamp(260px,44vw,540px);overflow:hidden;margin:0;background:var(--fallback)}
+.band img{position:absolute;left:0;top:-9%;width:100%;height:118%;object-fit:cover;filter:saturate(.7) brightness(.66);will-change:transform}
+.band figcaption{position:absolute;left:clamp(24px,6vw,88px);bottom:clamp(24px,5vw,56px);z-index:1;font-family:var(--serif);font-size:clamp(18px,2vw,24px);letter-spacing:.16em;line-height:1.9;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.55)}
+
+/* business rows */
+.biz-intro{max-width:36em;margin:-24px 0 clamp(56px,8vw,96px);color:var(--mute)}
+.biz{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center}
+.biz+.biz{margin-top:clamp(72px,10vw,128px)}
+.biz:nth-of-type(even) .biz__media{order:2}
+.biz__media{aspect-ratio:4/3}
+.biz__media img{transform:scale(1.06);transition:transform 2.2s cubic-bezier(.2,.6,.2,1)}
+.biz.is-in .biz__media img{transform:scale(1)}
+.biz:hover .biz__media img{transform:scale(1.03)}
+.biz__kind{margin:0 0 10px;font-size:13px;letter-spacing:.16em;color:var(--accent)}
+.biz h3{font-family:var(--serif);font-weight:600;font-size:clamp(21px,2.3vw,28px);line-height:1.6;letter-spacing:.08em;margin:0 0 18px}
+.biz p{color:var(--soft)}
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{font-size:12.5px;letter-spacing:.08em;padding:4px 13px;border:1px solid var(--line-strong);border-radius:999px}
+.note{font-size:13px;color:var(--mute);margin:18px 0 0}
+@media (max-width:900px){.biz{grid-template-columns:minmax(0,1fr)}.biz:nth-of-type(even) .biz__media{order:0}}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(var(--n,4),minmax(0,1fr));gap:clamp(16px,2.4vw,32px);position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:11px;height:1px;background:var(--line)}
+.steps::after{content:"";position:absolute;left:0;top:11px;height:1px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 2.4s cubic-bezier(.6,.1,.2,1)}
+.steps.is-in::after{transform:scaleX(1)}
+.step{position:relative;padding-top:46px}
+.step__dot{position:absolute;left:0;top:0;width:23px;height:23px;border-radius:50%;border:1px solid var(--mute);background:var(--sec-bg,var(--base));display:grid;place-items:center}
+.step__dot::after{content:"";width:11px;height:11px;border-radius:50%;background:var(--accent);transform:scale(0);transition:transform .5s cubic-bezier(.3,1.6,.5,1) var(--d,0s)}
+.steps.is-in .step__dot::after{transform:scale(1)}
+.step__no{font-family:var(--num);font-size:13px;color:var(--accent);letter-spacing:.12em}
+.step h3{font-family:var(--serif);font-weight:600;font-size:22px;letter-spacing:.18em;margin:6px 0 4px}
+.step__sub{font-size:12.5px;color:var(--mute);letter-spacing:.1em;margin:0 0 10px}
+.step p{font-size:14.5px;margin:0;color:var(--soft)}
+.loop{display:flex;align-items:center;gap:14px;margin:52px 0 0;color:var(--mute);font-size:14px}
+.loop svg{flex:none}
+@media (max-width:900px){
+ .steps{grid-template-columns:minmax(0,1fr);gap:0;padding-left:42px}
+ .steps::before,.steps::after{left:11px;right:auto;top:10px;bottom:10px;width:1px;height:auto}
+ .steps::after{transform:scaleY(0);transform-origin:top}
+ .steps.is-in::after{transform:scaleY(1)}
+ .step{padding:0 0 36px}
+ .step__dot{left:-42px}
+}
+
+/* values */
+.values{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.values li{padding:8px clamp(18px,3vw,40px) 8px;border-left:1px solid var(--line)}
+.values li:first-child{border-left:0;padding-left:0}
+.values h3{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.12em;margin:0 0 12px;line-height:1.6}
+.values h3 i{display:block;font-style:normal;font-family:var(--latin);font-size:13px;letter-spacing:.2em;color:var(--accent);margin-bottom:8px}
+.values p{margin:0;font-size:14.5px;color:var(--soft)}
+@media (max-width:860px){.values{grid-template-columns:minmax(0,1fr)}.values li{border-left:0;border-top:1px solid var(--line);padding:24px 0}.values li:first-child{border-top:0;padding-top:0}}
+
+/* message */
+.msg{display:flex;flex-direction:row-reverse;gap:clamp(40px,6vw,96px);justify-content:center;align-items:flex-start}
+.msg__title{writing-mode:vertical-rl;font-family:var(--serif);font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:.2em;line-height:1.7;margin:0;flex:none}
+.msg__body{writing-mode:vertical-rl;font-family:var(--serif);font-size:16.5px;line-height:2.3;letter-spacing:.14em;height:30em;max-width:100%;overflow-x:auto;overflow-y:hidden}
+.msg__body p{margin:0 0 0 1.5em}
+.msg__body .first{font-size:1.25em}
+.msg__sign{margin-top:auto!important;text-align:end;font-family:var(--sans)}
+.msg__sign small{display:block;font-size:13px;color:var(--mute);letter-spacing:.2em}
+.msg__sign strong{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.3em}
+@media (max-width:900px){
+ .msg{flex-direction:column;gap:32px}
+ .msg__title,.msg__body{writing-mode:horizontal-tb;height:auto}
+ .msg__body{line-height:2.1;letter-spacing:.06em;overflow:visible}
+ .msg__body p{margin:0 0 1.4em}
+ .msg__sign{text-align:right}
+}
+
+/* company */
+.company-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:clamp(32px,6vw,96px);align-items:start}
+.company-grid .sh{margin-bottom:24px}
+@media (max-width:900px){.company-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* footer */
+.footer{background:var(--deep);border-top:1px solid var(--line);padding:clamp(56px,8vw,80px) 0 calc(40px + env(safe-area-inset-bottom,0px))}
+.footer-in{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:32px}
+.footer-tag{margin:18px 0 0;font-family:var(--serif);font-size:clamp(15px,1.6vw,19px);letter-spacing:.18em}
+.footer-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 26px}
+.footer-nav a{text-decoration:none;font-size:13px;color:var(--mute);letter-spacing:.1em;transition:color .3s}
+.footer-nav a:hover{color:var(--text)}
+.copy{width:100%;margin:36px 0 0;font-family:var(--latin);font-size:12.5px;color:var(--mute);letter-spacing:.1em}
+.footer--center .footer-in{flex-direction:column;align-items:center;text-align:center}
+.footer--center .footer-nav ul{justify-content:center}
+
+/* rail base */
+.rail{position:fixed;right:clamp(10px,1.6vw,24px);top:50%;transform:translateY(-50%);height:min(54vh,480px);width:18px;z-index:90;pointer-events:none}
+.rail__line{position:absolute;left:8px;top:0;bottom:0;width:1px;background:var(--line-strong);opacity:.6}
+.rail__fill{position:absolute;left:8px;top:0;width:1px;height:100%;background:var(--accent);transform-origin:top;transform:scaleY(0)}
+.rail__tick{position:absolute;left:4px;width:9px;height:1px;background:rgba(var(--accent-rgb),.45);transition:width .4s,background .4s}
+.rail__tick.is-passed{width:11px;background:var(--accent)}
+.rail.on-light{--line-strong:rgba(var(--ink-rgb),.4)}
+@media (max-width:900px){.rail{right:6px;height:38vh}.rail__read{display:none}}
+
+.sh{margin:0 0 clamp(40px,6vw,72px)}
+.sh__en{display:flex;align-items:center;gap:12px;margin:0 0 14px;font-family:var(--latin);font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+.sh__en::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px rgba(var(--accent-rgb),.7)}
+.sh h2{font-family:var(--serif);font-weight:600;font-size:clamp(25px,3vw,38px);line-height:1.55;letter-spacing:.1em;margin:0}
+.gnav a{opacity:.8;transition:opacity .3s}.gnav a:hover,.gnav a:focus-visible{opacity:1}
+.menu-btn{border:1px solid var(--line)!important;border-radius:50%}
+.menu-btn span{position:absolute;left:13px;right:13px;height:1px;background:currentColor;transition:transform .3s,top .3s}
+.menu-btn span:nth-child(1){top:18px}.menu-btn span:nth-child(2){top:25px;background:var(--accent)}
+.menu-btn[aria-expanded="true"] span:nth-child(1){top:21.5px;transform:rotate(35deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){top:21.5px;transform:rotate(-35deg)}
+.profile{margin:0;border-top:1px solid var(--line-strong)}
+.profile>div{display:grid;grid-template-columns:9em minmax(0,1fr);gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.profile dt{color:var(--mute);font-size:14px;letter-spacing:.14em}
+.profile dd{margin:0}
+.profile ul{margin:0;padding:0;list-style:none}
+.profile li{position:relative;padding-left:1.2em}
+.profile li+li{margin-top:.3em}
+.profile li::before{content:"";position:absolute;left:0;top:.8em;width:6px;height:6px;background:var(--accent);border-radius:50% 0 50% 50%;transform:rotate(-45deg)}
+@media (max-width:760px){.profile>div{grid-template-columns:minmax(0,1fr);gap:4px}}
+.logo__t{display:flex;flex-direction:column;line-height:1.15}
+.logo__t b{font-family:var(--serif);font-weight:600;font-size:17px;letter-spacing:.14em}
+.logo__t small{font-family:var(--latin);font-style:italic;font-size:12px;color:var(--mute);letter-spacing:.04em}
+
+/* hero : A */
+.hero{background:radial-gradient(90% 70% at 85% 8%,rgba(233,201,138,.16) 0%,transparent 55%),radial-gradient(120% 90% at 80% 10%,#2A1F33 0%,var(--base) 62%)}
+.hero__veil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 55%,rgba(26,19,32,.9) 100%)}
+.hero__in{position:relative;z-index:1;min-height:100vh;min-height:100svh;max-width:1440px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:40px;padding:calc(var(--header-h) + 48px) clamp(48px,7vw,120px) 80px clamp(20px,5vw,72px)}
+.hero h1{writing-mode:vertical-rl;font-family:var(--serif);font-weight:500;font-size:clamp(38px,4.8vw,66px);line-height:1.6;letter-spacing:.22em;margin:0 clamp(0px,5vw,80px) 0 0;align-self:center}
+.hero h1 span{display:block}
+.hero h1 span+span{padding-top:2.4em}
+.hero h1 em{font-style:normal;color:var(--asahi)}
+.hero__copy{max-width:30em}
+.hero__en{font-family:var(--latin);font-style:italic;font-size:clamp(19px,1.7vw,23px);color:var(--accent);margin:0 0 14px}
+.hero__lead{font-size:15px;color:var(--soft);margin:0 0 22px}
+.hero__tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.hero__tags li{font-size:12.5px;letter-spacing:.1em;padding:5px 14px;border:1px solid rgba(217,155,190,.45);border-radius:999px}
+.hero .scroll-cue{left:clamp(20px,5vw,72px);bottom:24px;flex-direction:row}
+.hero .scroll-cue i{width:1px;height:40px}
+@media (max-width:760px){
+ .hero__in{grid-template-columns:minmax(0,1fr);align-content:space-between;padding:calc(var(--header-h) + 40px) 22px 88px}
+ .hero h1{writing-mode:horizontal-tb;font-size:clamp(30px,9vw,42px);letter-spacing:.1em;margin:0;order:-1}
+ .hero h1 span+span{padding-top:0;padding-left:1em}
+}
+
+/* concept */
+.word{font-family:var(--latin);font-style:italic;font-size:1.2em;color:var(--asahi)}
+.fig .ray{stroke:var(--asahi)}
+.fig .leafp{fill:rgba(217,155,190,.12);stroke:var(--accent);stroke-width:1.3}
+.fig .sun{fill:var(--asahi)}
+
+/* method */
+.method-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(40px,6vw,96px);align-items:center}
+.method-photo{aspect-ratio:4/5;border-radius:240px 240px 4px 4px}
+@media (max-width:900px){.method-grid{grid-template-columns:minmax(0,1fr)}.method-photo{aspect-ratio:4/3;max-width:440px}}
+.method .steps{--n:2;row-gap:40px}
+.method .steps::before,.method .steps::after{display:none}
+@media (max-width:900px){.method .steps::before,.method .steps::after{display:block}}
+
+/* rail */
+.rail__sun{position:absolute;left:8px;top:100%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:1px solid var(--asahi);transition:background .6s,box-shadow .6s}
+.rail__sun.is-on{background:var(--asahi);box-shadow:0 0 14px rgba(233,201,138,.9)}
+.rail__leaf{position:absolute;left:8px;top:0;width:20px;height:20px;transform:translate(-50%,-50%)}
+.rail__leaf path{fill:rgba(217,155,190,.25);stroke:var(--accent);stroke-width:1.3}
+.rail__leaf .v{fill:none}
+.rail.on-light .rail__leaf path{stroke:var(--accent-ink)}
+
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ .js .reveal,.js .hero [data-in]{opacity:1;transform:none}
+ .fig .ln{stroke-dashoffset:0}.fig .dot,.fig .lbl,.fig .lbl-s{opacity:1;transform:none}
+ .steps::after{transform:none}.step__dot::after{transform:scale(1)}
+ .biz__media img{transform:none}
+ .band img{transform:none!important}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="header" id="header">
+  <div class="header-in">
+    <!-- 【確認事項】葉と日の仮マーク・英字表記「AOI Research Institute」は仮です -->
+    <a class="logo" href="#top" aria-label="有限会社 葵綜合研究所 トップへ"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M15 27C8 21 5 16 8 12c2-3 6-2 7 1 1-3 5-4 7-1 3 4 0 9-7 15z" fill="none" stroke="#D99BBE" stroke-width="1.3"/><circle cx="25" cy="6" r="2.4" fill="#E9C98A"/></svg><span class="logo__t"><b>葵綜合研究所</b><small>AOI Research Institute</small></span></a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-controls="gnav" aria-expanded="false" aria-label="メニューを開く"><span></span><span></span></button>
+    <nav class="gnav" id="gnav" aria-label="メインメニュー">
+      <ul>
+      <li><a href="#concept">名前のこと</a></li>
+      <li><a href="#business">事業内容</a></li>
+      <li><a href="#method">進め方</a></li>
+      <li><a href="#values">大切にしていること</a></li>
+      <li><a href="#message">代表メッセージ</a></li>
+      <li><a href="#company">会社概要</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="rail" id="rail" aria-hidden="true">
+  <div class="rail__line"></div>
+  <div class="rail__fill" id="railFill"></div>
+  <span class="rail__sun" id="railSun"></span><svg class="rail__leaf" id="railLeaf" viewBox="-12 -12 24 24"><path d="M0 10C-7 4-9-1-6-5c2-2.6 5-2 6 .6 1-2.6 4-3.2 6-.6 3 4 1 9-6 15z"/><path d="M0 10V-3" class="v"/></svg>
+</div>
+
+<main id="main">
+<!-- ===== Hero (A) ===== -->
+<section class="hero" id="top" data-rail aria-labelledby="heroTitle">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero__veil" aria-hidden="true"></div>
+  <div class="hero__in">
+    <div class="hero__copy" data-in="3">
+      <p class="hero__en" lang="en">Turning eyes toward the light.</p>
+      <p class="hero__lead">有限会社葵綜合研究所は、企業向けの広告企画と販売促進支援サービスを提供し、広告活動を通じて企業の集客と販売促進を支える会社です。</p>
+      <ul class="hero__tags" aria-label="事業の領域"><li>広告企画</li><li>販売促進支援</li><li>集客支援</li></ul>
+    </div>
+    <!-- 【確認事項】キャッチコピーは制作側の案 -->
+    <h1 class="v" id="heroTitle" data-in="1"><span>よい理由に、</span><span><em>光</em>を当てる。</span></h1>
+  </div>
+  <a class="scroll-cue" href="#concept"><i></i>Scroll</a>
+</section>
+
+<!-- ===== Concept ===== -->
+<section class="sec" id="concept" data-rail aria-labelledby="conceptTitle">
+  <div class="wrap concept-grid">
+    <div class="concept-text reveal">
+      <div class="sh sh--eyebrow"><p class="sh__en" lang="en">About our name</p><h2 id="conceptTitle">葉は、日のほうへ向く。</h2></div>
+      <!-- 【確認事項】語源は一説。社名の由来としての採用可否をご確認ください -->
+      <p>社名の「葵」は、古くは <span class="word">あふひ</span> と書きました。一説には「日を仰ぐ」、つまり葉を日のほうへ向ける草であることから、その名がついたといわれます。</p>
+      <p>広告と販売促進の仕事は、これに似ています。よい商品やサービスには、必ず選ばれる理由がある。その理由に正しく光を当てれば、お客さまの目は自然とそちらへ向いていきます。</p>
+      <p>どこに、どの角度で、どれくらいの光を当てるのか。私たちはそれを、研究所のように観察し、仮説を立て、試し、確かめながら決めていきます。</p>
+    </div>
+    <figure class="fig reveal--fade" data-draw>
+      <svg viewBox="0 0 440 360" role="img" aria-labelledby="figT figD">
+        <title id="figT">三つの光をひとつの葉に当てる図</title>
+        <desc id="figD">中央下の葉に、左上から「広告企画」、上から「販売促進」、右上から「集客支援」の三本の光が当たっている図。</desc>
+        <path class="ln ray" pathLength="1" d="M60 70 L196 236"/>
+        <path class="ln ray d2" pathLength="1" d="M220 40 L220 226"/>
+        <path class="ln ray d3" pathLength="1" d="M380 70 L244 236"/>
+        <path class="ln leafp d4" pathLength="1" d="M220 330C178 296 164 266 182 242c12-16 32-12 38 4 6-16 26-20 38-4 18 24 4 54-38 88z"/>
+        <path class="ln d4" pathLength="1" d="M220 330V258"/>
+        <circle class="dot sun" cx="60" cy="70" r="7"/><circle class="dot sun" cx="220" cy="40" r="7"/><circle class="dot sun" cx="380" cy="70" r="7"/>
+        <text class="lbl" x="60" y="44" text-anchor="middle">広告企画</text>
+        <text class="lbl" x="220" y="16" text-anchor="middle">販売促進</text>
+        <text class="lbl" x="380" y="44" text-anchor="middle">集客支援</text>
+        <text class="lbl-s" x="300" y="318" text-anchor="start">選ばれる理由</text>
+      </svg>
+      <figcaption>三つの方向から、ひとつの理由を照らす。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<figure class="band">
+  <!-- 画像：Unsplash（仮）1470252649378-9c29740c9fa8 差し替え推奨 -->
+  <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&amp;fit=crop&amp;w=2000&amp;q=72" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-fallback');this.remove()">
+  <figcaption>光が当たれば、<br>目は自然とそちらへ向く。</figcaption>
+</figure>
+
+<!-- ===== Business ===== -->
+<section class="sec" id="business" data-rail aria-labelledby="bizTitle">
+  <div class="wrap">
+    <div class="sh sh--eyebrow"><p class="sh__en" lang="en">Business</p><h2 id="bizTitle">事業内容</h2></div>
+    <p class="biz-intro">広告業、販売促進業。企業向けの広告企画と販売促進支援サービスを提供し、広告活動を通じて集客と販売促進を支援します。</p>
+    <!-- 【確認事項】各事業の説明・項目はCSVを膨らませた案 -->
+    <article class="biz reveal" aria-labelledby="b1">
+      <figure class="biz__media ph">
+        <!-- 画像：Unsplash（仮）1743385779347-1549dabf1320 -->
+        <img src="https://images.unsplash.com/photo-1743385779347-1549dabf1320?auto=format&amp;fit=crop&amp;w=1400&amp;q=72" alt="マーケティング戦略のメモと資料が広がる机" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-fallback');this.remove()">
+      </figure>
+      <div>
+        <p class="biz__kind">光の向きを決める</p>
+        <h3 id="b1">広告企画</h3>
+        <p>企業の商品やサービスの魅力を整理し、届けたい相手に合わせた広告の企画を立てます。何を、誰に、どの場面で伝えるか。光を当てる向きを決める仕事です。</p>
+        <ul class="tags"><li>伝える相手と目的の整理</li><li>訴求内容と表現の設計</li><li>媒体・手段の検討</li></ul>
+      </div>
+    </article>
+    <article class="biz reveal" aria-labelledby="b2">
+      <figure class="biz__media ph">
+        <!-- 画像：Unsplash（仮）1507925921958-8a62f3d1a50d -->
+        <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&amp;fit=crop&amp;w=1400&amp;q=72" alt="壁に貼られた付箋に考えを書き出す手" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-fallback');this.remove()">
+      </figure>
+      <div>
+        <p class="biz__kind">手に取るきっかけをつくる</p>
+        <h3 id="b2">販売促進支援</h3>
+        <p>店頭や売り場、キャンペーンなど、購入のきっかけをつくる販売促進の取り組みを支援します。知ってもらった先で、選んでもらうための一押しです。</p>
+        <ul class="tags"><li>販促施策の企画</li><li>販促物・告知の準備支援</li><li>実施後の振り返り</li></ul>
+      </div>
+    </article>
+    <article class="biz reveal" aria-labelledby="b3">
+      <figure class="biz__media ph">
+        <!-- 画像：Unsplash（仮）1557804506-669a67965ba0 -->
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&amp;fit=crop&amp;w=1400&amp;q=72" alt="ホワイトボードの前で打ち合わせをするチーム" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-fallback');this.remove()">
+      </figure>
+      <div>
+        <p class="biz__kind">来てほしい人に、来てもらう</p>
+        <h3 id="b3">集客・販売促進支援</h3>
+        <p>広告活動を通じて、企業の集客と販売促進を後押しします。広告と販促を組み合わせ、来てほしい人に来てもらうための道筋を描きます。</p>
+        <ul class="tags"><li>集客の課題整理</li><li>広告と販促の組み合わせ</li><li>継続的な改善のご提案</li></ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== Method ===== -->
+<section class="sec alt method" id="method" data-rail aria-labelledby="meTitle">
+  <div class="wrap method-grid">
+    <figure class="ph method-photo reveal">
+      <!-- 写真の再掲を避け、日と葉の図形で装飾 -->
+      <svg viewBox="0 0 400 500" width="100%" height="100%" aria-hidden="true" style="position:absolute;inset:0"><g fill="none" stroke="rgba(217,155,190,.35)"><circle cx="200" cy="170" r="60"/><circle cx="200" cy="170" r="110"/><circle cx="200" cy="170" r="160" stroke-dasharray="2 8"/></g><circle cx="200" cy="170" r="22" fill="#E9C98A"/><path d="M200 470C150 430 132 396 154 368c14-18 38-14 46 4 8-18 32-22 46-4 22 28 4 62-46 102z" fill="rgba(217,155,190,.18)" stroke="#D99BBE"/></svg>
+    </figure>
+    <div>
+      <div class="sh sh--eyebrow"><p class="sh__en" lang="en">Method</p><h2 id="meTitle">観る、考える、試す、確かめる。</h2></div>
+      <!-- 【確認事項】進め方は社名の「研究所」から着想した制作側の案。順序のある工程のため番号を使用 -->
+      <ol class="steps reveal--fade" data-draw>
+        <li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">01</span><h3>観る</h3><p>商品・お客さま・売り場を観察し、選ばれる理由と迷う理由を探ります。</p></li>
+        <li class="step" style="--d:.5s"><span class="step__dot" aria-hidden="true"></span><span class="step__no">02</span><h3>考える</h3><p>観察から仮説を立て、広告と販売促進の企画に落とし込みます。</p></li>
+        <li class="step" style="--d:1s"><span class="step__dot" aria-hidden="true"></span><span class="step__no">03</span><h3>試す</h3><p>企画を実施し、実際の反応を集めます。</p></li>
+        <li class="step" style="--d:1.5s"><span class="step__dot" aria-hidden="true"></span><span class="step__no">04</span><h3>確かめる</h3><p>結果を振り返り、次の一手に生かします。</p></li>
+      </ol>
+      <p class="loop reveal"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 9a9 9 0 1 0 1.6 7" fill="none" stroke="#D99BBE" stroke-width="1.4" stroke-linecap="round"/><path d="M22.6 3.6 22 9l-5.2-1" fill="none" stroke="#D99BBE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>確かめた結果は、次の「観る」へ。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Values ===== -->
+<section class="sec" id="values" data-rail aria-labelledby="vaTitle">
+  <div class="wrap">
+    <div class="sh sh--eyebrow"><p class="sh__en" lang="en">Values</p><h2 id="vaTitle">大切にしていること</h2></div>
+    <!-- 【確認事項】文言は制作側の案 -->
+    <ul class="values reveal">
+      <li><h3><i>i</i>思い込みで決めない</h3><p>企画の前に、まず観察する。感覚だけに頼らず、根拠をもって提案します。</p></li>
+      <li><h3><i>ii</i>売り手と買い手の両方を見る</h3><p>企業の伝えたいことと、お客さまが知りたいことの重なりを探します。</p></li>
+      <li><h3><i>iii</i>一度で終わらせない</h3><p>実施した結果を次に生かし、取り組みを少しずつ確かなものにします。</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== Message（草案） ===== -->
+<section class="sec paper" id="message" data-rail data-light aria-labelledby="msgTitle">
+  <!-- 【確認事項】代表メッセージは草案です。ご本人の確認・修正を経て公開してください -->
+  <div class="wrap">
+    <div class="msg reveal">
+      <h2 class="msg__title" id="msgTitle">光の当て方を、<br>研究する。</h2>
+      <div class="msg__body">
+        <p class="first">よい商品があるのに、なぜか選ばれない。そんな場面を、これまで何度も見てきました。</p>
+        <p>多くの場合、足りないのは商品の力ではなく、光の当て方です。伝える相手、伝える言葉、伝える場所。そのどれかが少しずれているだけで、よい理由は見えなくなってしまいます。</p>
+        <p>私たちは、思い込みで決めずに観察し、試し、確かめることを続けてきました。派手な一回より、確かな積み重ねを大切にしています。</p>
+        <p>御社の「選ばれる理由」に、正しく光を当てるお手伝いをさせてください。</p>
+        <!-- 【確認事項】署名欄の氏名は会社概要に記載のため省略。役職名は仮 -->
+        <p class="msg__sign"><small>取締役</small><strong>野山昌英</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Company ===== -->
+<section class="sec" id="company" data-rail aria-labelledby="coTitle">
+  <div class="wrap company-grid">
+    <div class="reveal"><div class="sh sh--eyebrow"><p class="sh__en" lang="en">Company</p><h2 id="coTitle">会社概要</h2></div></div>
+    <div class="reveal">
+<dl class="profile">
+  <div><dt>商号</dt><dd>有限会社葵綜合研究所</dd></div>
+  <!-- 【確認事項】役職名の表記（有限会社のため取締役と仮置き） -->
+  <div><dt>代表者</dt><dd>取締役　野山昌英</dd></div>
+  <div><dt>所在地</dt><dd>〒111-0035　東京都台東区西浅草2-25-1</dd></div>
+  <!-- 【確認事項】CSVの事業内容は同じ文が二重に入っていたため、重複を除いて1回分を記載 -->
+  <div><dt>事業内容</dt><dd><ul><li>広告業、販売促進業</li><li>企業向け広告企画及び販売促進支援サービスを提供</li><li>広告活動を通じた企業の集客・販売促進支援サービス</li></ul></dd></div>
+  <!-- 【確認事項】設立年月日・資本金・従業員数はCSVに無いため未掲載。確定後にコメントを外して記入
+  <div><dt>設立</dt><dd>　年　月</dd></div>
+  <div><dt>資本金</dt><dd>　万円</dd></div>
+  <div><dt>従業員数</dt><dd>　名</dd></div>
+  -->
+</dl>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer footer--center">
+  <div class="wrap footer-in">
+    <div>
+      <a class="logo" href="#top" aria-label="有限会社 葵綜合研究所 トップへ"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M15 27C8 21 5 16 8 12c2-3 6-2 7 1 1-3 5-4 7-1 3 4 0 9-7 15z" fill="none" stroke="#D99BBE" stroke-width="1.3"/><circle cx="25" cy="6" r="2.4" fill="#E9C98A"/></svg><span class="logo__t"><b>葵綜合研究所</b><small>AOI Research Institute</small></span></a>
+      <p class="footer-tag">よい理由に、光を当てる。</p>
+    </div>
+    <nav class="footer-nav" aria-label="フッターメニュー">
+      <ul>
+      <li><a href="#concept">名前のこと</a></li>
+      <li><a href="#business">事業内容</a></li>
+      <li><a href="#method">進め方</a></li>
+      <li><a href="#values">大切にしていること</a></li>
+      <li><a href="#message">代表メッセージ</a></li>
+      <li><a href="#company">会社概要</a></li>
+      </ul>
+    </nav>
+    <p class="copy"><small>&copy; <span id="year">2026</span> 有限会社 葵綜合研究所</small></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+var railHooks = [], revealHooks = [];
+var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+/* header */
+var header = document.getElementById('header');
+
+/* menu */
+var btn = document.getElementById('menuBtn'), nav = document.getElementById('gnav');
+function setMenu(open){
+  btn.setAttribute('aria-expanded', String(open));
+  btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+  nav.classList.toggle('is-open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+  if (open){ var f = nav.querySelector('a'); if (f) f.focus(); }
+}
+btn.addEventListener('click', function(){ setMenu(btn.getAttribute('aria-expanded') !== 'true'); });
+nav.addEventListener('click', function(e){ if (e.target.closest('a') && nav.classList.contains('is-open')) setMenu(false); });
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && nav.classList.contains('is-open')){ setMenu(false); btn.focus(); } });
+matchMedia('(min-width:901px)').addEventListener('change', function(m){ if (m.matches) setMenu(false); });
+
+/* canvas runner (DPR<=2, debounce, pause offscreen/hidden, still frame on reduce) */
+function runCanvas(cv, factory, stillT){
+  if (!cv || !cv.getContext) return null;
+  var ctx = cv.getContext('2d'); if (!ctx) return null;
+  var api = factory(ctx), W = 0, H = 0, running = false, visible = true, raf = 0, t0 = performance.now();
+  function resize(){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    api.build(W, H);
+  }
+  function loop(now){ if (!running) return; api.draw((now - t0)/1000); raf = requestAnimationFrame(loop); }
+  function start(){ if (running || reduce || !visible || document.hidden) return; running = true; raf = requestAnimationFrame(loop); }
+  function stop(){ running = false; cancelAnimationFrame(raf); }
+  function still(){ api.draw(stillT || 99); }
+  resize();
+  if (reduce) still(); else start();
+  var rt, lastW = W;
+  addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(function(){
+    if (cv.clientWidth === lastW && Math.abs(cv.clientHeight - H) < 120 && running) return;  /* mobile URL bar */
+    lastW = cv.clientWidth; resize(); if (!running) still(); }, 150); });
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){ visible = en[0].isIntersecting; visible ? start() : stop(); }).observe(cv.parentElement);
+  }
+  document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+  return { still: still, isRunning: function(){ return running; } };
+}
+var pointer = {x:.5, y:.5, has:false};
+addEventListener('pointermove', function(e){ pointer.x = e.clientX/innerWidth; pointer.y = e.clientY/innerHeight; pointer.has = true; }, {passive:true});
+function clamp(v,a,b){ return v < a ? a : (v > b ? b : v); }
+function ease(t){ return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2; }
+
+
+/* hero: 葉が光（朝日）のほうへ向きをそろえる */
+runCanvas(document.getElementById('heroCanvas'), function(ctx){
+  var W, H, leaves = [], sx = 0, sy = 0;
+  function leafPath(sz){
+    ctx.beginPath(); ctx.moveTo(0, sz);
+    ctx.bezierCurveTo(-sz*1.1, sz*.2, -sz*.9, -sz*.9, 0, -sz*.45);
+    ctx.bezierCurveTo(sz*.9, -sz*.9, sz*1.1, sz*.2, 0, sz);
+  }
+  return {
+    build: function(w, h){
+      W = w; H = h; leaves = [];
+      var n = Math.round(W*H/(W < 760 ? 5200 : 4200));
+      for (var i = 0; i < n; i++){
+        var x = Math.random()*W, y = H*.18 + Math.random()*H*.86;
+        leaves.push({x:x, y:y, a0:Math.random()*6.283, sz:4 + Math.random()*7*(.5 + y/H), d:Math.random()*1.4, ph:Math.random()*6.283, a:0});
+      }
+      sx = W*(W < 760 ? .78 : .82); sy = H*.12;
+    },
+    draw: function(t){
+      ctx.clearRect(0, 0, W, H);
+      var tx = W*(W < 760 ? .78 : .82), ty = H*.12;
+      if (pointer.has && t < 90){ tx = W*(.3 + pointer.x*.6); ty = H*(.05 + pointer.y*.25); }
+      sx += (tx - sx)*.04; sy += (ty - sy)*.04;
+      var g = ctx.createRadialGradient(sx, sy, 0, sx, sy, Math.max(W, H)*.6);
+      g.addColorStop(0, 'rgba(233,201,138,.28)'); g.addColorStop(.25, 'rgba(233,201,138,.07)'); g.addColorStop(1, 'rgba(233,201,138,0)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = 'rgba(255,240,210,.9)'; ctx.beginPath(); ctx.arc(sx, sy, 5, 0, 6.283); ctx.fill();
+      for (var i = 0; i < leaves.length; i++){
+        var L = leaves[i];
+        var k = ease(clamp((t - .4 - L.d)/2.6, 0, 1));
+        var target = Math.atan2(sy - L.y, sx - L.x) + Math.PI/2;   /* 葉先を光へ */
+        var a = L.a0 + ((((target - L.a0) % 6.283) + 9.425) % 6.283 - 3.1416)*k;
+        a += Math.sin(t*1.1 + L.ph)*.06;
+        var dist = Math.hypot(sx - L.x, sy - L.y), lit = clamp(1 - dist/(Math.max(W, H)*.9), 0, 1);
+        ctx.save(); ctx.translate(L.x, L.y); ctx.rotate(a);
+        leafPath(L.sz);
+        ctx.fillStyle = 'rgba(147,176,142,' + (.05 + .12*lit) + ')'; ctx.fill();
+        ctx.strokeStyle = k > .95 ? 'rgba(217,155,190,' + (.25 + .5*lit) + ')' : 'rgba(241,235,239,' + (.12 + .2*lit) + ')';
+        ctx.lineWidth = 1; ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(0, L.sz); ctx.lineTo(0, L.sz*1.9); ctx.strokeStyle = 'rgba(147,176,142,' + (.2 + .3*lit) + ')'; ctx.stroke();
+        ctx.restore();
+      }
+    }
+  };
+}, 99);
+
+/* rail: 揺れていた葉が上を向き、終わりで日がともる */
+var rLeaf = document.getElementById('railLeaf'), rSun = document.getElementById('railSun');
+railHooks.push(function(p){
+  var ang = reduce ? 0 : (1 - p)*(140 + 30*Math.sin(p*18));
+  rLeaf.style.top = (p*100) + '%';
+  rLeaf.style.transform = 'translate(-50%,-50%) rotate(' + ang.toFixed(1) + 'deg)';
+  rSun.classList.toggle('is-on', p > .985);
+});
+
+
+/* reveal (one-shot) */
+var targets = document.querySelectorAll('.reveal, [data-draw]');
+function reveal(el){ el.classList.add('is-in'); revealHooks.forEach(function(h){ h(el); }); }
+if ('IntersectionObserver' in window && !reduce){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (!en.isIntersecting) return; reveal(en.target); io.unobserve(en.target); });
+  }, {threshold:.18, rootMargin:'0px 0px -6% 0px'});
+  targets.forEach(function(t){ io.observe(t); });
+} else { targets.forEach(reveal); }
+
+/* rail */
+var rail = document.getElementById('rail'), fill = document.getElementById('railFill');
+var secs = Array.prototype.slice.call(document.querySelectorAll('[data-rail]')), ticks = [];
+var lights = Array.prototype.slice.call(document.querySelectorAll('[data-light]'));
+function layoutTicks(){
+  ticks.forEach(function(t){ t.el.remove(); }); ticks = [];
+  var max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+  secs.forEach(function(s){
+    var p = clamp(s.offsetTop / max, 0, 1), el = document.createElement('i');
+    el.className = 'rail__tick'; el.style.top = (p*100) + '%'; rail.appendChild(el); ticks.push({p:p, el:el});
+  });
+}
+var band = document.querySelector('.band img');
+function onScroll(){
+  header.classList.toggle('is-scrolled', scrollY > 40);
+  var max = document.documentElement.scrollHeight - innerHeight;
+  var p = max > 0 ? clamp(scrollY / max, 0, 1) : 0;
+  fill.style.transform = 'scaleY(' + p + ')';
+  ticks.forEach(function(t){ t.el.classList.toggle('is-passed', p >= t.p - .002); });
+  var mid = innerHeight/2, onLight = lights.some(function(s){ var r = s.getBoundingClientRect(); return r.top < mid && r.bottom > mid; });
+  rail.classList.toggle('on-light', onLight);
+  railHooks.forEach(function(h){ h(p, ticks); });
+  if (band && !reduce){
+    var r = band.parentElement.getBoundingClientRect();
+    if (r.bottom > 0 && r.top < innerHeight){ var k = (r.top + r.height/2 - innerHeight/2)/innerHeight; band.style.transform = 'translateY(' + (k*-40).toFixed(1) + 'px)'; }
+  }
+}
+var ticking = false;
+addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(function(){ onScroll(); ticking = false; }); } }, {passive:true});
+addEventListener('load', function(){ layoutTicks(); onScroll(); });
+addEventListener('resize', function(){ layoutTicks(); onScroll(); });
+layoutTicks(); onScroll();
+
+requestAnimationFrame(function(){ requestAnimationFrame(function(){ document.body.classList.add('is-loaded'); }); });
+})();
+</script>
+</body>
+</html>
